@@ -1,0 +1,17 @@
+[Unit]
+Description=RTMP Connection Sensor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -jar --enable-preview /opt/stream_status/app.jar
+WorkingDirectory=/opt/stream_status
+User=root
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=rtmp-conn-sensor
+
+[Install]
+WantedBy=multi-user.target

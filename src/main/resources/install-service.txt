@@ -1,0 +1,7 @@
+nano /etc/systemd/system/rtmp-conn-sensor.service
+#copy-paste the service file into this OR just scp push the file into position
+
+systemctl daemon-reload
+systemctl start rtmp-conn-sensor
+systemctl enable rtmp-conn-sensor
+systemctl status rtmp-conn-sensor
